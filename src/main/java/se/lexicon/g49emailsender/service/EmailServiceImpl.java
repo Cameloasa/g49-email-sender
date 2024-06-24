@@ -23,7 +23,7 @@ public class EmailServiceImpl implements EmailService {
         //convert DTO to Entity using builder
         Email emailEntity = Email.builder()
                 .to(dto.getTo())
-                .from("test@test.com")
+                .from("camelia1414@gmail.com")
                 .subject(dto.getSubject())
                 .content(dto.getHtml())
                 .type(dto.getType())
