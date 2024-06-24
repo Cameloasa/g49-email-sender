@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import se.lexicon.g49emailsender.config.EmailProperties;
 import se.lexicon.g49emailsender.domain.dto.EmailDTO;
 import se.lexicon.g49emailsender.domain.entity.Email;
@@ -27,6 +28,7 @@ public class EmailServiceImpl implements EmailService {
     }
 
     @Override
+    @Transactional
     public void sendEmail(EmailDTO dto) {
         //Validate the params
         if(dto == null) throw new IllegalArgumentException("DTO cannot be null");
